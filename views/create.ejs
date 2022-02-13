@@ -1,7 +1,68 @@
-<h3>Create</h3>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Create Links</title>
+        <meta name="description" content="">
+        <%- include('partials/favicon') %>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/create.css">
+    </head>
+    <body>
+
+<div class="create-links">
+    <h1>Create Linktree</h1>
+    <form action="/create" method="post">
+    <label for="title">Enter image url</label>
+    <input type="url" name="title" id="title" placeholder="Image Url">
+    <label for="title">Enter title</label>
+    <input type="text" name="title" id="title" placeholder="Title" required>
+    <label for="title">Enter description</label>
+    <textarea name="description" id="description" cols="20" rows="3" placeholder="description"></textarea>
+
+    <h3 class="link-title">Links</h3>
+
+    <div class="link-div">
+        <label for="link1name">Link1</label>
+        <input type="text" name="link1Name" id="link1Name" placeholder="Name">
+        <input type="url" name="link1" id="link1" placeholder="Url">
+    </div>
+
+    <div class="link-div">
+        <label for="link2name">Link2</label>
+        <input type="text" name="link1Name" id="link2Name" placeholder="Name">
+        <input type="url" name="link2" id="link1" placeholder="Url">
+    </div>
+
+    <div class="link-div">
+        <label for="link3name">Link3</label>
+        <input type="text" name="link1Name" id="link3Name" placeholder="Name">
+        <input type="url" name="link3" id="link1" placeholder="Url">
+    </div>
+
+    <div class="link-div">
+        <label for="link4name">Link4</label>
+        <input type="text" name="link1Name" id="link4Name" placeholder="Name">
+        <input type="url" name="link4" id="link1" placeholder="Url">
+    </div>
+
+    <div class="link-div">
+        <label for="link5name">Link5</label>
+        <input type="text" name="link1Name" id="link5Name" placeholder="Name">
+        <input type="url" name="link5" id="link1" placeholder="Url">
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
+</div>
+
 
 <a href="/login">Login</a>
 <a href="/">Home</a>
 <a href="/view">View</a>
 <a href="/create">Create</a>
 <a href="/register">Signup</a>
+
+</body>
+</html>
