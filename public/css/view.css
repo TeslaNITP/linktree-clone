@@ -87,3 +87,20 @@ footer{
     max-width: 20rem;
 }
 }
+.view-links{
+    background-color: rgb(255, 135, 155);
+    padding:0.6rem 2rem;
+    margin: 1rem 0;
+    border-radius: 0.6rem;
+    color: white;
+    border: none;
+    position: fixed;
+    top:90%;
+}
+.view-links a {
+    text-decoration: none;
+    color: white;
+}
+.view-links:hover{
+    background-color: rgb(231, 108, 129);
+}
