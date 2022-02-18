@@ -30,7 +30,9 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/linktreeUserDB", () => {
+const password = process.env.DB_PASSWORD;
+const mongoUsername = process.env.DB_USER;
+mongoose.connect('mongodb+srv://'+ mongoUsername +':'+ password +'@cluster0.dssa4.mongodb.net/mflix?retryWrites=true&w=majority', () => {
   console.log("Databse connected!!");
 });
 
@@ -51,6 +53,8 @@ const userSchema = new mongoose.Schema({
   link4Url: String,
   link5Name: String,
   link5Url: String,
+  link6Name: String,
+  link6Url: String,
 });
 
 userSchema.plugin(passportLocalMongoose);
@@ -70,7 +74,7 @@ passport.deserializeUser((id, done) => {
 });
 
 app.get("/", (req, res) => {
-  res.render("home");
+  res.render("login");
 });
 
 app.get("/login", (req, res) => {
@@ -85,7 +89,8 @@ app.post("/login", (req, res) => {
 
   req.login(user, (err) => {
     if (err) {
-      console.log(err);
+      // console.log(err);
+      res.render("login",{errmsg:err});
     } else {
       passport.authenticate("local")(req, res, () => {
         res.redirect("/create");
@@ -104,8 +109,8 @@ app.post("/register", (req, res) => {
     req.body.password,
     (err, user) => {
       if (err) {
-        console.log(err);
-        res.redirect("/register");
+        // console.log(err);
+        res.render("signup",{errmsg:err});
       } else {
         passport.authenticate("local")(req, res, () => {
           res.redirect("/create");
@@ -121,7 +126,7 @@ app.get("/create", (req, res) => {
       res.render("login");
     } else {
       if (foundUser) {
-        console.log(req.user.id);
+        // console.log(req.user.id);
         res.render("create");
       }
     }
@@ -132,7 +137,18 @@ app.post("/create", (req, res) => {
   const imgUrl = req.body.imgUrl;
   const title = req.body.title;
   const description = req.body.description;
-  console.log(req.user.id);
+  const title1 = req.body.link1Name;
+  const url1 = req.body.link1;
+  const title2 = req.body.link2Name;
+  const url2 = req.body.link2;
+  const title3 = req.body.link3Name;
+  const url3 = req.body.link3;
+  const title4 = req.body.link4Name;
+  const url4 = req.body.link4;
+  const title5 = req.body.link5Name;
+  const url5 = req.body.link5;
+  const title6 = req.body.link6Name;
+  const url6 = req.body.link6;
 
   User.findById(req.user.id, (err, foundUser) => {
     if (err) {
@@ -142,6 +158,19 @@ app.post("/create", (req, res) => {
         foundUser.title = title;
         foundUser.description = description;
         foundUser.imgUrl = imgUrl;
+        foundUser.imgUrl = imgUrl;
+        foundUser.link1Name = title1;
+        foundUser.link1Url= url1;
+        foundUser.link2Name = title2;
+        foundUser.link2Url= url2;
+        foundUser.link3Name = title3;
+        foundUser.link3Url= url3;
+        foundUser.link4Name = title4;
+        foundUser.link4Url= url4;
+        foundUser.link5Name = title5;
+        foundUser.link5Url= url5;
+        foundUser.link6Name = title6;
+        foundUser.link6Url= url6;
         foundUser.save(() => {
           res.redirect("/view");
         });
@@ -160,6 +189,18 @@ app.get("/view", (req, res) => {
           title: foundUser.title,
           description: foundUser.description,
           imgUrl: foundUser.imgUrl,
+          title1: foundUser.link1Name,
+          url1:foundUser.link1Url,
+          title2: foundUser.link2Name,
+          url2:foundUser.link2Url,
+          title3: foundUser.link3Name,
+          url3:foundUser.link3Url,
+          title4: foundUser.link4Name,
+          url4:foundUser.link4Url,
+          title5: foundUser.link5Name,
+          url5:foundUser.link5Url,
+          title6: foundUser.link6Name,
+          url6:foundUser.link6Url,
         });
       }
     }
@@ -167,22 +208,34 @@ app.get("/view", (req, res) => {
 });
 
 app.get("/:organization", (req, res) => {
-  console.log(req.params.organization);
-  User.findOne({ title: req.params.organization }, function (err, foundOrg) {
+  // console.log(req.params.organization);
+  User.findOne({ title: req.params.organization }, function (err, foundUser) {
     if (!err) {
-      if (!foundOrg) {
+      if (!foundUser) {
         res.render("error");
       } else {
-        res.render("view", {
-          title: foundOrg.title,
-          description: foundOrg.description,
-          imgUrl: foundOrg.imgUrl,
+        res.render("viewgen", {
+          title: foundUser.title,
+          description: foundUser.description,
+          imgUrl: foundUser.imgUrl,
+          title1: foundUser.link1Name,
+          url1:foundUser.link1Url,
+          title2: foundUser.link2Name,
+          url2:foundUser.link2Url,
+          title3: foundUser.link3Name,
+          url3:foundUser.link3Url,
+          title4: foundUser.link4Name,
+          url4:foundUser.link4Url,
+          title5: foundUser.link5Name,
+          url5:foundUser.link5Url,
+          title6: foundUser.link6Name,
+          url6:foundUser.link6Url,
         });
       }
     }
   });
 });
 
-app.listen(3000, function () {
+app.listen(process.env.PORT || 3000, function () {
   console.log("Server started on port 3000.");
 });

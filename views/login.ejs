@@ -1,48 +1,58 @@
-<%- include('partials/header') %>
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="container mt-5">
-  <h1>Login</h1>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>LinkFree</title>
+  <%- include('partials/favicon') %>
+  <meta name="description" content="Linktree Clone">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/9d4449454b.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/register.css">
+</head>
 
-  <div class="row">
-    <div class="col-sm-8">
-      <div class="card">
-        <div class="card-body">
-
-          <!-- Makes POST request to /login route -->
-          <form action="/login" method="POST">
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" class="form-control" name="username">
-            </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" class="form-control" name="password">
-            </div>
-            <button type="submit" class="btn btn-dark">Login</button>
-          </form>
-
-        </div>
-      </div>
+<body>
+  <div class="register-body">
+    <div class="register-left">
+      <h1 class="head">
+        LinkFree
+      </h1>
+      <span>OPTIMIZED · INTEGRATED · FUTURE READY</span>
+      <p>
+        A portfolio website generator. You can enter your details and it will provide you with ready-made HTML code for
+        your very own portfolio page.
+      </p>
+      <h3 class="blue-feature">
+        With classic UI
+      </h3>
+      <h3 class="black-feature">
+        Let the Portfolyzer Do the Coding.
+      </h3>
     </div>
-
-    <div class="col-sm-4">
-      <div class="card">
-        <div class="card-body">
-          <a class="btn btn-block" href="/auth/google" role="button">
-            <i class="fab fa-google"></i>
-            Sign In with Google
-          </a>
-        </div>
+    <div class="register-container">
+      <h2 class="register-head">Login</h2>
+      <h5 class="register-head-def">Login now to get your own linktree withount writing a single line of code.
+      </h5>
+      <div class="msg-box">
+       <%= typeof errmsg != 'undefined' ? errmsg : '' %> 
       </div>
+      <form action="/login" method="POST">
+        <div>
+          <label for="email">Email</label>
+          <input type="email" class="form-control" name="username" placeholder="Enter Email id">
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" class="form-control" name="password" placeholder="Enter Password">
+        </div>
+        <div class="btn-cont">
+          <button type="submit" class="btn btn-dark">Login</button>
+        </div>
+      </form>
+      <p class="login-link">Don't have an account? <a href="/register">Register</a></p>
     </div>
-
   </div>
-</div>
+</body>
 
-<a href="/login">Login</a>
-<a href="/">Home</a>
-<a href="/view">View</a>
-<a href="/create">Create</a>
-<a href="/register">Signup</a>
-
-<%- include('partials/footer') %>
+</html>
