@@ -14,6 +14,36 @@ body{
     background-position: center center;
     background-image: url(/images/link-bg.jpg);
 }
+nav{
+   position: fixed; 
+   width: 100vw;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0.5rem 1rem;
+   backdrop-filter: blur(10px);
+   -webkit-backdrop-filter:blur(10px);
+    box-shadow: rgb(10 11 13 / 10%) 0px 4px 8px;
+}
+nav img{
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+}
+nav p{
+ font-weight: 600;
+ color:rgb(161, 62, 79);
+}
+nav button{
+   border-radius: 0.5rem;
+   background-color: white; 
+   cursor: pointer;
+   padding: 0.35rem 0.7rem;
+   border: 1px solid gray;
+}
+nav button:hover{
+    background-color: rgb(240, 240, 240);
+}
 .logo img{
     height: 6rem;
     width: 6rem;
