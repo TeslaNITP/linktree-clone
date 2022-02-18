@@ -8,6 +8,7 @@ function copytoclipboard() {
       console.error("Async: Could not copy text: ", err);
     }
   );
+  alert("Link of Your Linktree copied to clipboard. Share it.")
 }
 
 const navbar = document.querySelector('nav');

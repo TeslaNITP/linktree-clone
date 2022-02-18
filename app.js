@@ -30,7 +30,9 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/linktreeUserDB", () => {
+const password = process.env.DB_PASSWORD;
+const mongoUsername = process.env.DB_USER;
+mongoose.connect('mongodb+srv://'+ mongoUsername +':'+ password +'@cluster0.dssa4.mongodb.net/mflix?retryWrites=true&w=majority', () => {
   console.log("Databse connected!!");
 });
 
@@ -124,7 +126,7 @@ app.get("/create", (req, res) => {
       res.render("login");
     } else {
       if (foundUser) {
-        console.log(req.user.id);
+        // console.log(req.user.id);
         res.render("create");
       }
     }
@@ -206,7 +208,7 @@ app.get("/view", (req, res) => {
 });
 
 app.get("/:organization", (req, res) => {
-  console.log(req.params.organization);
+  // console.log(req.params.organization);
   User.findOne({ title: req.params.organization }, function (err, foundUser) {
     if (!err) {
       if (!foundUser) {
@@ -234,6 +236,6 @@ app.get("/:organization", (req, res) => {
   });
 });
 
-app.listen(3000, function () {
+app.listen(process.env.PORT || 3000, function () {
   console.log("Server started on port 3000.");
 });
