@@ -32,30 +32,30 @@
     </div>
     <div class="register-container">
       <h2 class="register-head">Register</h2>
-      <h5 class="register-head-def">Register now to get your own portfolio site withount writing a single line of code.
+      <h5 class="register-head-def">Register now to get your own limktree withount writing a single line of code.
       </h5>
       <div class="msg-box">
-
+       <%= typeof errmsg != 'undefined' ? errmsg : '' %> 
       </div>
       <form action="/register" method="POST">
-        <div>
+        <!-- <div>
           <label for="name">Name</label><br />
-          <input type="name" name="name" placeholder="Enter Name"
-            value="<%= typeof name != 'undefined' ? name : '' %>" />
+          <input type="name" name="title" placeholder="Enter Name"
+            value="" required/>
 
-        </div>
+        </div> -->
         <div>
           <label for="email">Email</label>
-          <input type="email" class="form-control" name="username" placeholder="Enter Email id">
+          <input type="email" class="form-control" name="username" placeholder="Enter Email id" required>
         </div>
         <div>
           <label for="password">Password</label>
-          <input type="password" class="form-control" name="password" placeholder="Enter Password">
+          <input type="password" class="form-control" name="password" placeholder="Enter Password" required>
         </div>
-        <div>
+        <!-- <div>
           <label for="password">Confirm Password</label>
-          <input type="password" class="form-control" name="password" placeholder="Confirm Password">
-        </div>
+          <input type="password" class="form-control" name="password" placeholder="Confirm Password" required>
+        </div> -->
         <div class="btn-cont">
           <button type="submit" class="btn btn-dark">Register</button>
         </div>

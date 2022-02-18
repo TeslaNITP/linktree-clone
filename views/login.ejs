@@ -31,11 +31,11 @@
       </h3>
     </div>
     <div class="register-container">
-      <h2 class="register-head">Register</h2>
-      <h5 class="register-head-def">Register now to get your own portfolio site withount writing a single line of code.
+      <h2 class="register-head">Login</h2>
+      <h5 class="register-head-def">Login now to get your own linktree withount writing a single line of code.
       </h5>
       <div class="msg-box">
-
+       <%= typeof errmsg != 'undefined' ? errmsg : '' %> 
       </div>
       <form action="/login" method="POST">
         <div>

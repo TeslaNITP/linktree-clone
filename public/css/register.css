@@ -134,3 +134,10 @@
     font-weight: 600;
     margin-bottom: 2rem;
   }
+  .msg-box{
+    text-align: center;
+    color:red;
+    font-size: 0.9rem;
+    margin: auto;
+    width: 80%;
+  }

@@ -135,3 +135,6 @@ svg:hover{
 .view-links:hover{
     background-color: rgb(231, 108, 129);
 }
+svg{
+    opacity: 0;
+}
