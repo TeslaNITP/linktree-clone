@@ -1,45 +1,68 @@
-<%- include('partials/header') %>
-<div class="container mt-5">
-  <h1>Register</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-  <div class="row">
-    <div class="col-sm-8">
-      <div class="card">
-        <div class="card-body">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Linktree</title>
+  <%- include('partials/favicon') %>
+  <meta name="description" content="Linktree Clone">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/9d4449454b.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/register.css">
+</head>
 
-          <!-- Makes POST request to /register route -->
-          <form action="/register" method="POST">
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" class="form-control" name="username">
-            </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" class="form-control" name="password">
-            </div>
-            <button type="submit" class="btn btn-dark">Register</button>
-          </form>
+<body>
+  <div class="register-body">
+    <div class="register-left">
+      <h1 class="head">
+        Portfolyzer
+      </h1>
+      <span>OPTIMIZED · INTEGRATED · FUTURE READY</span>
+      <p>
+        A portfolio website generator. You can enter your details and it will provide you with ready-made HTML code for
+        your very own portfolio page.
+      </p>
+      <h3 class="blue-feature">
+        With classic UI
+      </h3>
+      <h3 class="black-feature">
+        Let the Portfolyzer Do the Coding.
+      </h3>
+    </div>
+    <div class="register-container">
+      <h2 class="register-head">Register</h2>
+      <h5 class="register-head-def">Register now to get your own portfolio site withount writing a single line of code.
+      </h5>
+      <div class="msg-box">
+
+      </div>
+      <form action="/register" method="POST">
+        <div>
+          <label for="name">Name</label><br />
+          <input type="name" name="name" placeholder="Enter Name"
+            value="<%= typeof name != 'undefined' ? name : '' %>" />
 
         </div>
-      </div>
-    </div>
-
-    <div class="col-sm-4">
-      <div class="card social-block">
-        <div class="card-body">
-          <a class="btn btn-block" href="/auth/google" role="button">
-            <i class="fab fa-google"></i>
-            Sign Up with Google
-          </a>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" class="form-control" name="username" placeholder="Enter Email id">
         </div>
-      </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" class="form-control" name="password" placeholder="Enter Password">
+        </div>
+        <div>
+          <label for="password">Confirm Password</label>
+          <input type="password" class="form-control" name="password" placeholder="Confirm Password">
+        </div>
+        <div class="btn-cont">
+          <button type="submit" class="btn btn-dark">Register</button>
+        </div>
+      </form>
+      <p class="login-link">Have An Account? <a href="/login">Login</a></p>
     </div>
-
   </div>
-</div>
-<a href="/login">Login</a>
-<a href="/">Home</a>
-<a href="/view">View</a>
-<a href="/create">Create</a>
-<a href="/register">Signup</a>
-<%- include('partials/header') %>
+</body>
+
+</html>

@@ -173,7 +173,7 @@ app.get("/:organization", (req, res) => {
       if (!foundOrg) {
         res.render("error");
       } else {
-        res.render("view", {
+        res.render("viewgen", {
           title: foundOrg.title,
           description: foundOrg.description,
           imgUrl: foundOrg.imgUrl,

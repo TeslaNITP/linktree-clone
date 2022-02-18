@@ -96,13 +96,10 @@ nav button:hover{
   box-shadow: 1px 1px 11px 1px rgb(167, 167, 167);  
   width: 50.5vw;
 }
-.link-cont:hover p{
-    padding: 1.25rem 0;
-}
 
 footer{
    text-align: center;
-   margin-top: 2rem; 
+   margin-top: 1rem;
 }
 
 @media screen and (max-width:900px) {
@@ -118,19 +115,28 @@ footer{
 }
 }
 .view-links{
-    background-color: rgb(255, 135, 155);
+    background-color: rgb(228, 118, 137);
     padding:0.6rem 2rem;
     margin: 1rem 0;
-    border-radius: 0.6rem;
+    border-radius: 0.8rem;
     color: white;
     border: none;
     position: fixed;
-    top:90%;
+    top:85%;
+    box-shadow: 2px 2px 10px 1px rgb(160, 160, 160);
 }
 .view-links a {
     text-decoration: none;
     color: white;
 }
 .view-links:hover{
-    background-color: rgb(231, 108, 129);
+    background-color: rgb(218, 91, 112);
+}
+.foot-up{
+    text-align: center;
+    margin-top: 2rem;
+}
+.foot-up a {
+    text-decoration: none;
+    color:purple;
 }
