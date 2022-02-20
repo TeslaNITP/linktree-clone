@@ -37,12 +37,11 @@
        <%= typeof errmsg != 'undefined' ? errmsg : '' %> 
       </div>
       <form action="/register" method="POST">
-        <!-- <div>
-          <label for="name">Name</label><br />
-          <input type="name" name="title" placeholder="Enter Name"
-            value="" required/>
-
-        </div> -->
+        <div>
+          <label for="name">User Name</label><br />
+          <input type="name" name="title" placeholder="Enter username"
+          required/>
+        </div>
         <div>
           <label for="email">Email</label>
           <input type="email" class="form-control" name="username" placeholder="Enter Email id" required>

@@ -105,7 +105,7 @@ app.get("/register", (req, res) => {
 
 app.post("/register", (req, res) => {
   User.register(
-    { username: req.body.username },
+    { username: req.body.username , title: req.body.title},
     req.body.password,
     (err, user) => {
       if (err) {
@@ -127,7 +127,23 @@ app.get("/create", (req, res) => {
     } else {
       if (foundUser) {
         // console.log(req.user.id);
-        res.render("create");
+        res.render("create", {
+          title: foundUser.title,
+          description: foundUser.description,
+          imgUrl: foundUser.imgUrl,
+          title1: foundUser.link1Name,
+          url1:foundUser.link1Url,
+          title2: foundUser.link2Name,
+          url2:foundUser.link2Url,
+          title3: foundUser.link3Name,
+          url3:foundUser.link3Url,
+          title4: foundUser.link4Name,
+          url4:foundUser.link4Url,
+          title5: foundUser.link5Name,
+          url5:foundUser.link5Url,
+          title6: foundUser.link6Name,
+          url6:foundUser.link6Url,
+        });
       }
     }
   });
