@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title><%= title %> | Linktree</title>
+        <title><%= foundUser.title %> | Linktree</title>
         <%- include('partials/favicon') %>
         <meta name="description" content="Linktree Clone">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,57 +12,57 @@
     </head>
     <body>
         <nav>
-           <img src="<%= imgUrl %>">
-           <p><%= title %> </p> 
-           <button class="copy" id="http://localhost:3000/<%= title %>" onclick="copytoclipboard()">Copy link</button>
+           <img src="<%= foundUser.imgUrl %>">
+           <p><%= foundUser.title %> </p> 
+           <button class="copy" id="http://localhost:3000/<%= foundUser.title %>" onclick="copytoclipboard()">Copy link</button>
         </nav>
         
 <div class="links-body">
     <div class="logo">
-        <img src="<%= imgUrl %>" alt="logo">
-        <p class="title"><%= title %> </p>
-        <h5><%= description %> </h5>
+        <img src="<%= foundUser.imgUrl %>" alt="logo">
+        <p class="title"><%= foundUser.title %> </p>
+        <h5><%= foundUser.description %> </h5>
     </div>
     <div class="links">
         <div class="link-body">
-            <a href="<%= url1 %>"  target="_blank" rel="noopener noreferrer">
+            <a href="<%= foundUser.link1Url %>"  target="_blank" rel="noopener noreferrer">
             <div class="link-cont">
-                <p><%= title1 %> </p>
+                <p><%= foundUser.link1Name %> </p>
             </div>
         </a>
         </div>
         <div class="link-body">
-            <a href="<%= url2 %>" target="_blank" rel="noopener noreferrer">
+            <a href="<%= foundUser.link2Url %>" target="_blank" rel="noopener noreferrer">
             <div class="link-cont">
-                <p><%= title2 %></p>
+                <p><%= foundUser.link2Name %></p>
             </div>
         </a>
         </div>
         <div class="link-body">
-            <a href="<%= url3 %>" target="_blank" rel="noopener noreferrer">
+            <a href="<%= foundUser.link3Url %>" target="_blank" rel="noopener noreferrer">
             <div class="link-cont">
-                <p><%= title3 %></p>
+                <p><%= foundUser.link3Name %></p>
             </div>
         </a>
         </div>
         <div class="link-body">
-            <a href="<%= url4 %>" target="_blank" rel="noopener noreferrer">
+            <a href="<%= foundUser.link4Url %>" target="_blank" rel="noopener noreferrer">
             <div class="link-cont">
-                <p><%= title4 %></p>
+                <p><%= foundUser.link4Name %></p>
             </div>
         </a>
         </div>
         <div class="link-body">
-            <a href="<%= url5 %>" target="_blank" rel="noopener noreferrer">
+            <a href="<%= foundUser.link5Url %>" target="_blank" rel="noopener noreferrer">
             <div class="link-cont">
-                <p><%= title5 %></p>
+                <p><%= foundUser.link5Name %></p>
             </div>
         </a>
         </div>
         <div class="link-body">
-            <a href="<%= url6 %>" target="_blank" rel="noopener noreferrer">
+            <a href="<%= foundUser.link6Url %>" target="_blank" rel="noopener noreferrer">
             <div class="link-cont">
-                <p><%= title6 %></p>
+                <p><%= foundUser.link6Name %></p>
             </div>
         </a>
         </div>

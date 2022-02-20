@@ -127,23 +127,7 @@ app.get("/create", (req, res) => {
     } else {
       if (foundUser) {
         // console.log(req.user.id);
-        res.render("create", {
-          title: foundUser.title,
-          description: foundUser.description,
-          imgUrl: foundUser.imgUrl,
-          title1: foundUser.link1Name,
-          url1:foundUser.link1Url,
-          title2: foundUser.link2Name,
-          url2:foundUser.link2Url,
-          title3: foundUser.link3Name,
-          url3:foundUser.link3Url,
-          title4: foundUser.link4Name,
-          url4:foundUser.link4Url,
-          title5: foundUser.link5Name,
-          url5:foundUser.link5Url,
-          title6: foundUser.link6Name,
-          url6:foundUser.link6Url,
-        });
+        res.render("create", {foundUser:foundUser});
       }
     }
   });
@@ -201,23 +185,7 @@ app.get("/view", (req, res) => {
       console.log(err);
     } else {
       if (foundUser) {
-        res.render("view", {
-          title: foundUser.title,
-          description: foundUser.description,
-          imgUrl: foundUser.imgUrl,
-          title1: foundUser.link1Name,
-          url1:foundUser.link1Url,
-          title2: foundUser.link2Name,
-          url2:foundUser.link2Url,
-          title3: foundUser.link3Name,
-          url3:foundUser.link3Url,
-          title4: foundUser.link4Name,
-          url4:foundUser.link4Url,
-          title5: foundUser.link5Name,
-          url5:foundUser.link5Url,
-          title6: foundUser.link6Name,
-          url6:foundUser.link6Url,
-        });
+        res.render("view", {foundUser:foundUser});
       }
     }
   });
@@ -230,23 +198,7 @@ app.get("/:organization", (req, res) => {
       if (!foundUser) {
         res.render("error");
       } else {
-        res.render("viewgen", {
-          title: foundUser.title,
-          description: foundUser.description,
-          imgUrl: foundUser.imgUrl,
-          title1: foundUser.link1Name,
-          url1:foundUser.link1Url,
-          title2: foundUser.link2Name,
-          url2:foundUser.link2Url,
-          title3: foundUser.link3Name,
-          url3:foundUser.link3Url,
-          title4: foundUser.link4Name,
-          url4:foundUser.link4Url,
-          title5: foundUser.link5Name,
-          url5:foundUser.link5Url,
-          title6: foundUser.link6Name,
-          url6:foundUser.link6Url,
-        });
+        res.render("viewgen", {foundUser:foundUser});
       }
     }
   });

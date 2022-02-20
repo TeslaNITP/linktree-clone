@@ -16,11 +16,11 @@
     <h1>Create Linktree</h1>
     <form action="/create" method="post">
     <label for="title">Enter image url</label>
-    <input type="text" name="imgUrl" id="title" placeholder="Image Url" value="<%= typeof imgUrl != 'undefined' ? imgUrl : '' %>">
+    <input type="text" name="imgUrl" id="title" placeholder="Image Url" value="<%= typeof foundUser.imgUrl != 'undefined' ? foundUser.imgUrl : '' %>">
     <label for="title">Enter title</label>
-    <input type="text" name="title" id="title" placeholder="Title" value="<%= typeof title != 'undefined' ? title : '' %>" required>
+    <input type="text" name="title" id="title" placeholder="Title" value="<%= typeof foundUser.title != 'undefined' ? foundUser.title : '' %>" required>
     <label for="title">Enter description</label>
-    <textarea name="description" id="description" cols="20" rows="3" placeholder="description"><%= typeof description != 'undefined' ? description : '' %></textarea>
+    <textarea name="description" id="description" cols="20" rows="3" placeholder="description"><%= typeof foundUser.description != 'undefined' ? foundUser.description : '' %></textarea>
 
    <div class="link-head">
         <h3 class="link-title">Links</h3>
@@ -36,8 +36,8 @@
                 </svg>
             </div>
         </div>
-        <input type="text" name="link1Name" id="link1Name" placeholder="Title" value="<%= typeof title1 != 'undefined' ? title1 : '' %>">
-        <input type="text" name="link1" id="link1" placeholder="Url" value="<%= typeof url1 != 'undefined' ? url1 : '' %>">
+        <input type="text" name="link1Name" id="link1Name" placeholder="Title" value="<%= typeof foundUser.link1Name != 'undefined' ? foundUser.link1Name : '' %>">
+        <input type="text" name="link1" id="link1" placeholder="Url" value="<%= typeof foundUser.link1Url != 'undefined' ? foundUser.link1Url : '' %>">
     </div>
 
     <div class="link-div">
@@ -50,8 +50,8 @@
                 </svg>
             </div>
         </div>
-        <input type="text" name="link2Name" id="link2Name" placeholder="Title" value="<%= typeof title2 != 'undefined' ? title2 : '' %>">
-        <input type="text" name="link2" id="link2" placeholder="Url" value="<%= typeof url2 != 'undefined' ? url2 : '' %>">
+        <input type="text" name="link2Name" id="link2Name" placeholder="Title" value="<%= typeof foundUser.link2Name != 'undefined' ? foundUser.link2Name : '' %>">
+        <input type="text" name="link2" id="link2" placeholder="Url" value="<%= typeof foundUser.link2Url != 'undefined' ? foundUser.link2Url : '' %>">
     </div>
 
     <div class="link-div">
@@ -64,8 +64,8 @@
                 </svg>
             </div>
         </div>
-        <input type="text" name="link3Name" id="link3Name" placeholder="Title" value="<%= typeof title3 != 'undefined' ? title3 : '' %>">
-        <input type="text" name="link3" id="link3" placeholder="Url" value="<%= typeof url3 != 'undefined' ? url3 : '' %>">
+        <input type="text" name="link3Name" id="link3Name" placeholder="Title" value="<%= typeof foundUser.link3Name != 'undefined' ? foundUser.link3Name : '' %>">
+        <input type="text" name="link3" id="link3" placeholder="Url" value="<%= typeof foundUser.link3Url != 'undefined' ? foundUser.link3Url : '' %>">
     </div>
 
     <div class="link-div">
@@ -78,8 +78,8 @@
                 </svg>
             </div>
         </div>
-        <input type="text" name="link4Name" id="link4Name" placeholder="Title" value="<%= typeof title4 != 'undefined' ? title4 : '' %>">
-        <input type="text" name="link4" id="link4" placeholder="Url" value="<%= typeof url4 != 'undefined' ? url4 : '' %>">
+        <input type="text" name="link4Name" id="link4Name" placeholder="Title" value="<%= typeof foundUser.link4Name != 'undefined' ? foundUser.link4Name : '' %>">
+        <input type="text" name="link4" id="link4" placeholder="Url" value="<%= typeof foundUser.link4Url != 'undefined' ? foundUser.link4Url : '' %>">
     </div>
 
     <div class="link-div">
@@ -92,8 +92,8 @@
                 </svg>
             </div>
         </div>
-        <input type="text" name="link5Name" id="link5Name" placeholder="Title" value="<%= typeof title5 != 'undefined' ? title5 : '' %>">
-        <input type="text" name="link5" id="link1" placeholder="Url" value="<%= typeof url5 != 'undefined' ? url5 : '' %>">
+        <input type="text" name="link5Name" id="link5Name" placeholder="Title" value="<%= typeof foundUser.link5Name != 'undefined' ? foundUser.link5Name : '' %>">
+        <input type="text" name="link5" id="link1" placeholder="Url" value="<%= typeof foundUser.link5Url != 'undefined' ? foundUser.link5Url : '' %>">
     </div>
 
     <div class="link-div">
@@ -106,8 +106,8 @@
                 </svg>
             </div>
         </div>
-        <input type="text" name="link6Name" id="link6Name" placeholder="Title" value="<%= typeof title6 != 'undefined' ? title6 : '' %>">
-        <input type="text" name="link6" id="link6" placeholder="Url" value="<%= typeof url6 != 'undefined' ? url6 : '' %>">
+        <input type="text" name="link6Name" id="link6Name" placeholder="Title" value="<%= typeof foundUser.link6Name != 'undefined' ? foundUser.link6Name : '' %>">
+        <input type="text" name="link6" id="link6" placeholder="Url" value="<%= typeof foundUser.link6Url != 'undefined' ? foundUser.link6Url : '' %>">
     </div>
 
     <button type="submit">Submit</button>
