@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="css/view.css">
     </head>
     <body>
-        <nav>
+        <nav class="nav">
            <img src="<%= foundUser.imgUrl %>">
            <p><%= foundUser.title %> </p> 
            <a href="https://lincfree.herokuapp.com/<%= foundUser.title %>" target="_blank" rel="noopener noreferrer">
@@ -27,48 +27,71 @@
     </div>
 <!-- https://d1fdloi71mui9q.cloudfront.net/MLCksxkuTryYeE37ZPkK_ll6YABwvxeo16F8h -->
     <div class="links">
+        <% if(foundUser.link1Name === null || foundUser.link1Name === ""){ %>
+        <% }else{ %>
         <div class="link-body">
-            <a href="<%= foundUser.link1Url %>"  target="_blank" rel="noopener noreferrer">
-            <div class="link-cont">
-                <p><%= foundUser.link1Name %> </p>
-            </div>
-        </a>
+            <a href="<%= foundUser.link1Url %>" target="_blank" rel="noopener noreferrer">
+                <div class="link-cont">
+                    <p><%= foundUser.link1Name %></p>
+                </div>
+            </a>
         </div>
+        <% } %>
+
+        <% if(foundUser.link2Name === null || foundUser.link2Name === ""){ %>
+        <% }else{ %>
         <div class="link-body">
             <a href="<%= foundUser.link2Url %>" target="_blank" rel="noopener noreferrer">
-            <div class="link-cont">
-                <p><%= foundUser.link2Name %></p>
-            </div>
-        </a>
+                <div class="link-cont">
+                    <p><%= foundUser.link2Name %></p>
+                </div>
+            </a>
         </div>
+        <% } %>
+
+        <% if(foundUser.link3Name === null || foundUser.link3Name === ""){ %>
+        <% }else{ %>
         <div class="link-body">
             <a href="<%= foundUser.link3Url %>" target="_blank" rel="noopener noreferrer">
-            <div class="link-cont">
-                <p><%= foundUser.link3Name %></p>
-            </div>
-        </a>
+                <div class="link-cont">
+                    <p><%= foundUser.link3Name %></p>
+                </div>
+            </a>
         </div>
+        <% } %>
+
+        <% if(foundUser.link4Name === null || foundUser.link4Name === ""){ %>
+        <% }else{ %>
         <div class="link-body">
             <a href="<%= foundUser.link4Url %>" target="_blank" rel="noopener noreferrer">
-            <div class="link-cont">
-                <p><%= foundUser.link4Name %></p>
-            </div>
-        </a>
+                <div class="link-cont">
+                    <p><%= foundUser.link4Name %></p>
+                </div>
+            </a>
         </div>
+        <% } %>
+
+        <% if(foundUser.link5Name === null || foundUser.link5Name === ""){ %>
+        <% }else{ %>
         <div class="link-body">
             <a href="<%= foundUser.link5Url %>" target="_blank" rel="noopener noreferrer">
-            <div class="link-cont">
-                <p><%= foundUser.link5Name %></p>
-            </div>
-        </a>
+                <div class="link-cont">
+                    <p><%= foundUser.link5Name %></p>
+                </div>
+            </a>
         </div>
+        <% } %>
+
+        <% if(foundUser.link6Name === null || foundUser.link6Name === ""){ %>
+        <% }else{ %>
         <div class="link-body">
             <a href="<%= foundUser.link6Url %>" target="_blank" rel="noopener noreferrer">
-            <div class="link-cont">
-                <p><%= foundUser.link6Name %></p>
-            </div>
-        </a>
+                <div class="link-cont">
+                    <p><%= foundUser.link6Name %></p>
+                </div>
+            </a>
         </div>
+        <% } %>
     </div>
     <button class="view-links"><a href="/create">Edit links</a></button>
 </div>
@@ -76,7 +99,7 @@
 <footer>
     Made with ❤️ by <a href="https://github.com/SudhansuuRanjan" target="_blank" rel="noopener noreferrer">Sudhanshu</a>
 </footer>
-<script src="scripts/script.js"></script>
+<script src="scripts/viewscript.js"></script>
     </body>
 </html>
 
