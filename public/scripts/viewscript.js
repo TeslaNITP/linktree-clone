@@ -18,7 +18,7 @@ const changeNavbarColor = () =>{
        navbar.style.opacity= 1;
      }
      else{
-       navbar.style.opacity= 0;
+       navbar.style.opacity= 1;
      }
   };
   window.addEventListener('scroll', changeNavbarColor);
